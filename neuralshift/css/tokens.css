@@ -1,0 +1,69 @@
+/* Design tokens. Light is the default; html.dark overrides switch the palette. */
+
+:root {
+  --bg:        #f7f6f3;
+  --bg-1:      #f0ede8;
+  --bg-2:      #e8e4dd;
+  --bg-3:      #dedad2;
+  --bg-4:      #d4cfc6;
+  --bg-card:   #f4f1ec;
+
+  --t1: #0f0f0f;
+  --t2: rgba(15,15,15,0.65);
+  --t3: rgba(15,15,15,0.38);
+  --t4: rgba(15,15,15,0.20);
+
+  --g:      #157a5a;
+  --g-dim:  rgba(21,122,90,0.09);
+  --g-glow: rgba(21,122,90,0.18);
+
+  --b1: rgba(0,0,0,0.07);
+  --b2: rgba(0,0,0,0.12);
+  --b3: rgba(0,0,0,0.20);
+
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+
+  --nav-h: 68px;
+  --max: 1080px;
+  --r: 14px;
+  --rl: 22px;
+
+  --nav-scroll-bg: rgba(247,246,243,0.90);
+  --dash-screen-bg: #1a2235;
+  --phone-screen-bg: #1a2235;
+  --logo-filter: invert(0);
+  --pain-bg: rgba(0,0,0,0.03);
+  --featured-bg: #e6f4ef;
+  --field-bg: #eceae4;
+}
+
+html.dark {
+  --bg:        #080808;
+  --bg-1:      #0e0e0e;
+  --bg-2:      #141414;
+  --bg-3:      #1a1a1a;
+  --bg-4:      #202020;
+  --bg-card:   #111111;
+
+  --t1: #ffffff;
+  --t2: rgba(255,255,255,0.65);
+  --t3: rgba(255,255,255,0.38);
+  --t4: rgba(255,255,255,0.20);
+
+  --g:      #1D9E75;
+  --g-dim:  rgba(29,158,117,0.10);
+  --g-glow: rgba(29,158,117,0.18);
+
+  --b1: rgba(255,255,255,0.07);
+  --b2: rgba(255,255,255,0.12);
+  --b3: rgba(255,255,255,0.18);
+
+  --nav-scroll-bg: rgba(8,8,8,0.88);
+  --dash-screen-bg: #0a0f1a;
+  --phone-screen-bg: #0a0f1a;
+  --logo-filter: invert(1);
+  --pain-bg: rgba(255,255,255,0.025);
+  --featured-bg: #0c1f18;
+  --field-bg: #141414;
+}

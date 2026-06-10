@@ -1,0 +1,295 @@
+.offers-section { background: var(--bg-1); }
+.offers-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 80px;
+}
+.offers-headline {
+  font-family: var(--serif);
+  font-size: clamp(28px,3.5vw,42px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--t1);
+}
+.offers-headline em { font-style: italic; color: var(--t3); }
+.offers-lead { margin: 14px auto 0; font-size: 14px; text-align: center; }
+
+/* Operational Audit card (entry point) */
+.audit-card {
+  background: var(--bg-2);
+  border: 0.5px solid rgba(29,158,117,0.2);
+  border-radius: var(--rl);
+  padding: 48px 52px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.audit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(29,158,117,0.06), transparent 60%);
+  pointer-events: none;
+}
+.audit-card:hover { border-color: rgba(29,158,117,0.35); }
+.audit-step {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 16px;
+}
+.audit-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.audit-desc {
+  font-size: 14.5px;
+  color: var(--t2);
+  line-height: 1.72;
+  max-width: 440px;
+  font-weight: 300;
+}
+.audit-includes {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.audit-include {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--t3);
+}
+.audit-include-tick { color: var(--g); }
+.audit-price-block {
+  text-align: center;
+  flex-shrink: 0;
+}
+.audit-amount {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1;
+}
+.audit-curr { font-size: 13px; color: var(--t3); margin-bottom: 16px; }
+.audit-credit-note {
+  font-size: 11px;
+  color: var(--t4);
+  margin-top: 10px;
+  max-width: 160px;
+}
+
+/* Journey divider between the audit card and system levels */
+.journey-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.journey-line { flex: 1; height: 0.5px; background: var(--b1); }
+.journey-text {
+  font-size: 10.5px;
+  color: var(--t3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* System level cards */
+.system-cards { display: flex; flex-direction: column; gap: 4px; }
+.sys-offer-card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--b1);
+  border-radius: var(--rl);
+  overflow: hidden;
+  transition: border-color 0.25s, background 0.25s;
+}
+.sys-offer-card:hover { border-color: var(--b2); background: var(--bg-2); }
+.sys-offer-card.featured {
+  background: var(--featured-bg);
+  border-color: rgba(29,158,117,0.28);
+  box-shadow: 0 0 0 1px rgba(29,158,117,0.1), 0 20px 60px rgba(29,158,117,0.08);
+}
+.sys-offer-inner {
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+}
+.soi-level {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t4);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.soi-level.active { color: var(--g); }
+.soi-level-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.soi-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.soi-who {
+  font-size: 13px;
+  color: var(--t3);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.soi-transform {
+  font-size: 14.5px;
+  color: var(--t2);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 460px;
+  margin-bottom: 20px;
+}
+.soi-includes { margin-top: 20px; }
+.soi-includes summary {
+  font-size: 11px;
+  color: var(--t3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.soi-includes summary::-webkit-details-marker { display: none; }
+.soi-includes summary::after {
+  content: '↓';
+  transition: transform 0.2s;
+}
+details[open] .soi-includes summary::after { transform: rotate(180deg); }
+.soi-feat-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.soi-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--t3);
+}
+.soi-feat-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--g-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.soi-feat-check svg { width: 8px; height: 8px; stroke: var(--g); fill: none; stroke-width: 2.5; }
+.soi-right {
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.soi-price {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1;
+}
+.soi-price-lbl { font-size: 11px; color: var(--t3); margin-bottom: 6px; }
+.soi-retainer { font-size: 13px; color: var(--t3); margin-bottom: 20px; }
+.soi-retainer strong { color: var(--g); }
+.featured-badge {
+  display: inline-block;
+  background: var(--g);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.payment-note {
+  margin-top: 28px;
+  padding: 18px 24px;
+  background: rgba(0,0,0,0.025);
+  border: 0.5px solid var(--b1);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+html.dark .payment-note { background: rgba(255,255,255,0.025); }
+.payment-note-text { font-size: 13px; color: var(--t3); }
+.payment-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pstep { font-size: 12px; color: var(--t2); }
+.pstep-arrow { font-size: 11px; color: var(--t4); }
+
+/* "Not sure which level?" closer */
+.pricing-extra {
+  margin-top: 60px;
+  text-align: center;
+}
+.pricing-extra-lead {
+  font-size: 15px;
+  color: var(--t2);
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.72;
+}
+
+@media (max-width: 1024px) {
+  .audit-card { grid-template-columns: 1fr; gap: 28px; }
+  .audit-price-block { text-align: left; }
+  .sys-offer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .soi-right { text-align: left; }
+}
+@media (max-width: 768px) {
+  .sys-offer-inner { padding: 24px 20px; }
+  .audit-card { padding: 28px 20px; gap: 20px; }
+  .audit-title { font-size: 26px; }
+  .audit-amount { font-size: 36px; }
+}
+@media (max-width: 480px) {
+  .sys-offer-inner { padding: 20px 16px; }
+  .audit-card { padding: 22px 16px; }
+}

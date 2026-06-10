@@ -1,0 +1,117 @@
+.contact-section { padding: 0 0 80px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  padding: 80px 0;
+}
+.contact-h {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--t1);
+  margin-bottom: 12px;
+}
+.contact-p {
+  font-size: 14px;
+  color: var(--t2);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.channel-list { display: flex; flex-direction: column; gap: 10px; }
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-2);
+  border: 0.5px solid var(--b1);
+  border-radius: var(--r);
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.channel:hover { border-color: var(--b2); background: var(--bg-3); }
+.ch-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ch-ico.wa { background: #25D366; }
+.ch-ico.cal { background: var(--bg-4); border: 0.5px solid var(--b2); }
+.ch-ico.mail { background: var(--bg-4); border: 0.5px solid var(--b2); }
+.ch-title { font-size: 13px; font-weight: 500; color: var(--t1); margin-bottom: 2px; }
+.ch-sub { font-size: 11.5px; color: var(--t3); }
+
+/* Contact form (static — the JS just gives feedback on the button) */
+.form-h {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--t1);
+  margin-bottom: 24px;
+}
+.form-group { margin-bottom: 14px; }
+.form-lbl {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  display: block;
+  margin-bottom: 7px;
+}
+.form-field {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--field-bg);
+  border: 0.5px solid var(--b2);
+  border-radius: var(--r);
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--t1);
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-field:focus { border-color: rgba(29,158,117,0.5); }
+.form-field::placeholder { color: var(--t4); }
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(0,0,0,0.35)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+html.dark .form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.25)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+textarea.form-field { resize: vertical; min-height: 110px; }
+
+.form-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--t1);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.form-btn:hover { background: rgba(15,15,15,0.9); }
+html.dark .form-btn:hover { background: rgba(255,255,255,0.9); }
+/* Class applied by the JS handler when the form is "sent" */
+.form-btn.sent { background: var(--g); color: #fff; }
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+}

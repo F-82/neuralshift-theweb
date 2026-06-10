@@ -1,0 +1,177 @@
+// Injects the shared nav and footer markup, then wires the hamburger menu, the
+// theme toggle buttons, and the active nav link. Both placeholders (#site-nav and
+// #site-footer) are present on every page. The active link is selected from a
+// data-page attribute on <body>.
+
+(function () {
+  var WA_URL = 'https://wa.me/94762874856';
+  var WA_INTRO = WA_URL + '?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20NeuralShift';
+
+  var WA_ICON_SMALL = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+
+  var SUN_ICON = '<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  var NAV_LINKS = [
+    { id: 'home',        href: 'index.html',        label: 'Home' },
+    { id: 'about',       href: 'about.html',        label: 'About' },
+    { id: 'systems',     href: 'systems.html',      label: 'Systems' },
+    { id: 'casestudies', href: 'case-studies.html', label: 'Case Studies' },
+    { id: 'pricing',     href: 'pricing.html',      label: 'Pricing' }
+  ];
+
+  function navMarkup() {
+    var links = NAV_LINKS.map(function (l) {
+      return '<a href="' + l.href + '" data-nav="' + l.id + '">' + l.label + '</a>';
+    }).join('');
+
+    var mobLinks = NAV_LINKS.map(function (l) {
+      return '<a href="' + l.href + '">' + l.label + '</a>';
+    }).join('');
+
+    return ''
+      + '<nav id="mainNav" aria-label="Primary">'
+      +   '<div class="nav-inner">'
+      +     '<a href="index.html" class="nav-logo" aria-label="NeuralShift home">'
+      +       '<img src="assets/logo.jpg" alt="" class="nav-logo-mark" aria-hidden="true">'
+      +       '<span class="nav-wordmark">NEURAL<span>/SHIFT</span></span>'
+      +     '</a>'
+      +     '<div class="nav-links">' + links + '</div>'
+      +     '<div class="nav-right">'
+      +       '<button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">'
+      +         MOON_ICON + SUN_ICON
+      +       '</button>'
+      +       '<a href="' + WA_URL + '" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">'
+      +         WA_ICON_SMALL + ' WhatsApp'
+      +       '</a>'
+      +       '<a href="contact.html" class="btn btn-white btn-sm">Book a call</a>'
+      +     '</div>'
+      +     '<button class="ham" id="hamBtn" aria-label="Menu" aria-controls="mobNav" aria-expanded="false">'
+      +       '<span></span><span></span><span></span>'
+      +     '</button>'
+      +   '</div>'
+      + '</nav>'
+      + '<div class="mob-nav" id="mobNav" aria-label="Mobile">'
+      +   '<div class="mob-theme-row">'
+      +     '<span>Appearance</span>'
+      +     '<button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">'
+      +       MOON_ICON + SUN_ICON
+      +     '</button>'
+      +   '</div>'
+      +   mobLinks
+      +   '<div class="mob-cta">'
+      +     '<a href="' + WA_URL + '" target="_blank" rel="noopener" class="btn btn-wa">Chat on WhatsApp</a>'
+      +     '<a href="contact.html" class="btn btn-white">Book a call</a>'
+      +   '</div>'
+      + '</div>';
+  }
+
+  function footerMarkup() {
+    return ''
+      + '<footer>'
+      +   '<div class="footer-inner">'
+      +     '<div class="footer-top">'
+      +       '<div class="footer-brand">'
+      +         '<span class="footer-brand-word">NEURAL<span>/SHIFT</span></span>'
+      +         '<p>The operational infrastructure for Sri Lanka’s best F&amp;B businesses. Built here, for here.</p>'
+      +       '</div>'
+      +       '<div>'
+      +         '<div class="footer-col-head">Company</div>'
+      +         '<div class="footer-links">'
+      +           '<a href="about.html">About</a>'
+      +           '<a href="case-studies.html">Case Studies</a>'
+      +           '<a href="contact.html">Contact</a>'
+      +         '</div>'
+      +       '</div>'
+      +       '<div>'
+      +         '<div class="footer-col-head">Systems</div>'
+      +         '<div class="footer-links">'
+      +           '<a href="systems.html">BizCore Overview</a>'
+      +           '<a href="pricing.html">Pricing</a>'
+      +         '</div>'
+      +       '</div>'
+      +       '<div>'
+      +         '<div class="footer-col-head">Get in touch</div>'
+      +         '<div class="footer-links">'
+      +           '<a href="' + WA_URL + '" target="_blank" rel="noopener">WhatsApp</a>'
+      +           '<a href="mailto:hello@neuralshift.lk">hello@neuralshift.lk</a>'
+      +           '<a href="contact.html">Book a call</a>'
+      +         '</div>'
+      +       '</div>'
+      +     '</div>'
+      +     '<div class="footer-bottom">'
+      +       '<span class="footer-copy">© 2026 NeuralShift. All rights reserved.</span>'
+      +       '<span class="footer-copy">Colombo · Galle, Sri Lanka</span>'
+      +     '</div>'
+      +   '</div>'
+      + '</footer>';
+  }
+
+  function waFabMarkup() {
+    return ''
+      + '<a href="' + WA_INTRO + '" class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">'
+      +   '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>'
+      + '</a>';
+  }
+
+  function injectInto(selector, markup) {
+    var host = document.querySelector(selector);
+    if (host) host.outerHTML = markup;
+  }
+
+  function setActiveNavLink() {
+    var current = document.body.getAttribute('data-page');
+    if (!current) return;
+    var links = document.querySelectorAll('[data-nav]');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('data-nav') === current) {
+        links[i].classList.add('active');
+      }
+    }
+  }
+
+  function wireThemeToggles() {
+    if (!window.NSTheme) return;
+    var buttons = document.querySelectorAll('[data-theme-toggle]');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', window.NSTheme.toggle);
+    }
+  }
+
+  function wireHamburger() {
+    var btn = document.getElementById('hamBtn');
+    var drawer = document.getElementById('mobNav');
+    if (!btn || !drawer) return;
+
+    function setOpen(open) {
+      btn.classList.toggle('open', open);
+      drawer.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    btn.addEventListener('click', function () {
+      setOpen(!drawer.classList.contains('open'));
+    });
+
+    // Tapping a link inside the drawer closes it before navigation.
+    var links = drawer.querySelectorAll('a, button');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function () { setOpen(false); });
+    }
+  }
+
+  function init() {
+    injectInto('#site-nav', navMarkup());
+    injectInto('#site-footer', footerMarkup());
+    injectInto('#site-wa-fab', waFabMarkup());
+    setActiveNavLink();
+    wireThemeToggles();
+    wireHamburger();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

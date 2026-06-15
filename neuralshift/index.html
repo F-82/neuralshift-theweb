@@ -34,21 +34,52 @@
     <div class="hero-aura"></div>
     <div class="hero-grid-lines"></div>
     <div class="hero-inner">
-      <div class="fi hero-eyebrow">Sri Lanka’s F&amp;B Operating System</div>
-      <h1 class="hero-title fi d1">Your business,<br>finally<br><em>running properly.</em></h1>
-      <p class="hero-sub fi d2">NeuralShift builds the operational backbone of Sri Lanka’s best F&amp;B businesses — replacing manual chaos with a system that thinks alongside your operation.</p>
-      <div class="hero-actions fi d3">
-        <a href="https://wa.me/94762874856?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20business%20assessment" target="_blank" rel="noopener" class="btn btn-white btn-lg">Book a free assessment</a>
-        <a href="systems.html" class="btn btn-ghost btn-lg">See the system →</a>
+      <div class="hero-text">
+        <div class="fi hero-eyebrow">Sri Lanka’s F&amp;B Operating System</div>
+        <h1 class="hero-title fi d1">Your business,<br>finally<br><em>running properly.</em></h1>
+        <p class="hero-sub fi d2">NeuralShift builds the operational backbone of Sri Lanka’s best F&amp;B businesses — replacing manual chaos with a system that thinks alongside your operation.</p>
+        <div class="hero-actions fi d3">
+          <a href="https://wa.me/94762874856?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20business%20assessment" target="_blank" rel="noopener" class="btn btn-white btn-lg">Book a free assessment</a>
+          <a href="systems.html" class="btn btn-ghost btn-lg">See the system →</a>
+        </div>
+        <div class="hero-proof fi d4">
+          <div class="proof-item"><strong>Stacko Café</strong> — live, Galle</div>
+          <div class="proof-div"></div>
+          <div class="proof-item"><strong>0</strong> missed orders / week</div>
+          <div class="proof-div"></div>
+          <div class="proof-item"><strong>+31%</strong> revenue in 60 days</div>
+          <div class="proof-div"></div>
+          <div class="proof-item">Built in <strong>Sri Lanka</strong></div>
+        </div>
       </div>
-      <div class="hero-proof fi d4">
-        <div class="proof-item"><strong>Stacko Café</strong> — live, Galle</div>
-        <div class="proof-div"></div>
-        <div class="proof-item"><strong>0</strong> missed orders / week</div>
-        <div class="proof-div"></div>
-        <div class="proof-item"><strong>+31%</strong> revenue in 60 days</div>
-        <div class="proof-div"></div>
-        <div class="proof-item">Built in <strong>Sri Lanka</strong></div>
+      <div class="hero-phone fi d2">
+        <div class="hero-phone-frame">
+          <div class="hero-phone-notch"></div>
+          <video
+            id="heroReel"
+            class="hero-phone-video"
+            playsinline
+            autoplay
+            muted
+            loop
+            preload="metadata"
+            poster="assets/reel/reel-poster.jpg"
+            aria-label="NeuralShift in action">
+            <source src="assets/reel/reel-1080.mp4" type="video/mp4">
+          </video>
+          <button type="button" id="heroReelUnmute" class="hero-phone-unmute" aria-label="Unmute reel" aria-pressed="false">
+            <svg class="ico-mute" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <svg class="ico-unmute" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 010 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 010 14.14"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -311,5 +342,6 @@
 <script src="js/components.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/nav-scroll.js"></script>
+<script src="js/hero-reel.js"></script>
 </body>
 </html>

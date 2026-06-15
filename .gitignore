@@ -5,3 +5,6 @@ node_modules/
 .vercel
 .env
 .env.local
+
+# Reel master — 16MB 4K source; the encoded variants in neuralshift/assets/reel/ are what ship.
+Neuralshift_Reel.mp4

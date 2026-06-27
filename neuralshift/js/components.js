@@ -17,7 +17,8 @@
     { id: 'about',       href: 'about.html',        label: 'About' },
     { id: 'systems',     href: 'systems.html',      label: 'Systems' },
     { id: 'casestudies', href: 'case-studies.html', label: 'Case Studies' },
-    { id: 'pricing',     href: 'pricing.html',      label: 'Pricing' }
+    { id: 'pricing',     href: 'pricing.html',      label: 'Pricing' },
+    { id: 'faq',         href: 'faq.html',          label: 'FAQ' }
   ];
 
   function navMarkup() {
@@ -91,6 +92,7 @@
       +         '<div class="footer-links">'
       +           '<a href="systems.html">BizCore Overview</a>'
       +           '<a href="pricing.html">Pricing</a>'
+      +           '<a href="faq.html">FAQ</a>'
       +         '</div>'
       +       '</div>'
       +       '<div>'

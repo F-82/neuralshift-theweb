@@ -1,0 +1,62 @@
+/* FAQ page — accordion list of questions. Builds on home.css (page-hero) and
+   the shared tokens; no new colors, only token references. */
+
+.faq-list {
+  max-width: 760px;
+}
+
+.faq-item {
+  border-bottom: 0.5px solid var(--b2);
+}
+.faq-item:first-child {
+  border-top: 0.5px solid var(--b2);
+}
+
+.faq-q {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 4px;
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--t1);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q:hover { color: var(--g); }
+
+/* Plus/minus indicator drawn from borders so it inherits the palette. */
+.faq-q::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  background:
+    linear-gradient(var(--t2), var(--t2)) center / 12px 1.5px no-repeat,
+    linear-gradient(var(--t2), var(--t2)) center / 1.5px 12px no-repeat;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.faq-item[open] .faq-q::after {
+  transform: rotate(90deg);
+  opacity: 0.5;
+}
+.faq-item[open] .faq-q {
+  color: var(--g);
+}
+
+.faq-a {
+  padding: 0 4px 28px;
+  max-width: 660px;
+}
+.faq-a p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--t2);
+}

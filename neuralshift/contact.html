@@ -121,14 +121,15 @@
           </div>
         </div>
 
-        <!-- Static contact form — the JS handler in contact.js shows a temporary "Sent" state. -->
-        <div class="fi d2">
+        <!-- Contact form — no backend. On submit, contact.js opens a pre-filled
+             WhatsApp chat; nothing is stored server-side. -->
+        <form id="contactForm" class="fi d2">
           <div class="form-h">Send a message</div>
-          <div class="form-group"><label class="form-lbl" for="cf-name">Your Name</label><input id="cf-name" type="text" class="form-field" placeholder="e.g. Dilshan Perera"></div>
-          <div class="form-group"><label class="form-lbl" for="cf-biz">Business Name</label><input id="cf-biz" type="text" class="form-field" placeholder="e.g. Stacko Café"></div>
-          <div class="form-group"><label class="form-lbl" for="cf-phone">WhatsApp Number</label><input id="cf-phone" type="tel" class="form-field" placeholder="+94 76 287 4856"></div>
+          <div class="form-group"><label class="form-lbl" for="cf-name">Your Name</label><input id="cf-name" name="name" type="text" class="form-field" placeholder="e.g. Dilshan Perera" required></div>
+          <div class="form-group"><label class="form-lbl" for="cf-biz">Business Name</label><input id="cf-biz" name="business" type="text" class="form-field" placeholder="e.g. Stacko Café"></div>
+          <div class="form-group"><label class="form-lbl" for="cf-phone">WhatsApp Number</label><input id="cf-phone" name="phone" type="tel" class="form-field" placeholder="+94 76 287 4856"></div>
           <div class="form-group"><label class="form-lbl" for="cf-ind">Industry</label>
-            <select id="cf-ind" class="form-field form-select">
+            <select id="cf-ind" name="industry" class="form-field form-select">
               <option value="">Select</option>
               <option>Restaurant / Café</option>
               <option>Cloud Kitchen</option>
@@ -137,9 +138,9 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="form-group"><label class="form-lbl" for="cf-msg">What’s not working right now?</label><textarea id="cf-msg" class="form-field" placeholder="Tell us about the operational challenges you’re facing..."></textarea></div>
-          <button id="contactSendBtn" class="form-btn" type="button">Send message</button>
-        </div>
+          <div class="form-group"><label class="form-lbl" for="cf-msg">What’s not working right now?</label><textarea id="cf-msg" name="message" class="form-field" placeholder="Tell us about the operational challenges you’re facing..." required></textarea></div>
+          <button id="contactSendBtn" class="form-btn" type="submit">Send message</button>
+        </form>
       </div>
     </div>
   </section>

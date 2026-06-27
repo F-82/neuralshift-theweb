@@ -117,31 +117,6 @@
       + '</a>';
   }
 
-  // Organization structured data, injected once into <head> on every page.
-  // schema.org Organization (not LocalBusiness — there is no physical address).
-  function injectOrgJsonLd() {
-    var data = {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'NeuralShift',
-      url: 'https://neuralshift.lk',
-      logo: 'https://neuralshift.lk/assets/logo-512.png',
-      description: 'The operating system for Sri Lankan businesses — operational infrastructure built for Sri Lanka’s best F&B businesses.',
-      areaServed: 'LK',
-      contactPoint: {
-        '@type': 'ContactPoint',
-        telephone: '+94762874856',
-        contactType: 'customer service'
-      },
-      // Fill in with social profile URLs once they exist.
-      sameAs: []
-    };
-    var script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-  }
-
   function injectInto(selector, markup) {
     var host = document.querySelector(selector);
     if (host) host.outerHTML = markup;
@@ -189,7 +164,6 @@
   }
 
   function init() {
-    injectOrgJsonLd();
     injectInto('#site-nav', navMarkup());
     injectInto('#site-footer', footerMarkup());
     injectInto('#site-wa-fab', waFabMarkup());

@@ -30,6 +30,25 @@
   <!-- Apply the saved theme before first paint to avoid a flash of the wrong palette. -->
   <script>try{if(localStorage.getItem('ns-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}</script>
 
+  <!-- Organization structured data (schema.org). Static so JS-blind crawlers (GPTBot, PerplexityBot, Bing) read it reliably. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NeuralShift",
+    "url": "https://neuralshift.lk",
+    "logo": "https://neuralshift.lk/assets/logo-512.png",
+    "description": "The operating system for Sri Lankan businesses — operational infrastructure built for Sri Lanka’s best F&B businesses.",
+    "areaServed": "LK",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+94762874856",
+      "contactType": "customer service"
+    },
+    "sameAs": []
+  }
+  </script>
+
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">

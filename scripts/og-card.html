@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  Source template for assets/og-image.png (1200x630 social share card).
+  Rendered headless by scripts/gen-assets.sh. Colors/fonts mirror the live
+  site: --bg #f7f6f3, --t1 #0f0f0f, --t2 rgba(15,15,15,.65), --g #157a5a,
+  Instrument Serif (display) + DM Sans (body). Edit here, then re-run the
+  script — never raster-upscale.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #f7f6f3;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Faint brand glow, mirroring the home hero aura. Not a divider. */
+  .aura {
+    position: absolute;
+    right: -140px;
+    bottom: -170px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(21,122,90,0.18), rgba(21,122,90,0));
+  }
+  .card {
+    position: absolute;
+    inset: 0;
+    padding: 84px 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { width: 46px; height: 46px; display: block; }
+  .wordmark {
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0f0f0f;
+  }
+  .wordmark .slash { color: #157a5a; }
+  .headline {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: #0f0f0f;
+  }
+  .headline em { font-style: italic; }
+  .desc {
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    color: rgba(15,15,15,0.65);
+  }
+</style>
+</head>
+<body>
+  <div class="aura"></div>
+  <div class="card">
+    <div class="lockup">
+      <img src="../neuralshift/assets/logo-512.png" alt="">
+      <span class="wordmark">NEURAL<span class="slash">/SHIFT</span></span>
+    </div>
+    <div>
+      <div class="headline">Your business, finally<br><em>running properly.</em></div>
+      <div class="desc">The operating system for Sri Lankan businesses.</div>
+    </div>
+  </div>
+</body>
+</html>

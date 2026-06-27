@@ -559,7 +559,15 @@ h1.hero-title em {
   flex-shrink: 0;
   margin-top: 2px;
   color: #E24B4A;
-  font-size: 10px;
+}
+
+.pain-x svg {
+  width: 9px;
+  height: 9px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
 }
 
 .pain-text {

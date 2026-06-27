@@ -226,6 +226,12 @@ html.dark .icon-moon { display: block; }
   max-width: 480px;
   line-height: 1.72;
 }
+.ph-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
 
 /* Shared CTA strip (used by home, about, systems, case studies) */
 .cta-strip {

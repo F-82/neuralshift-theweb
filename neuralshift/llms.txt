@@ -1,0 +1,48 @@
+# NeuralShift
+
+NeuralShift builds the operational backbone of Sri Lanka's best F&B businesses —
+replacing manual chaos with a system that thinks alongside your operation. It is
+operational infrastructure (orders, kitchen, stock, suppliers, billing, staff)
+run through one connected system, built from scratch for each business.
+
+Area served: Sri Lanka (Colombo, Galle).
+
+## BizCore
+
+BizCore is a single operating system for an F&B business — not a collection of
+tools. Every module is connected, so changing one thing updates the whole system
+and every number lives in one place. Modules: Order Management, Kitchen Display
+(KDS), Inventory Control, Billing & POS, Customer CRM, Revenue Analytics,
+Workflow Automation, WhatsApp Integration, Supplier Management. Trilingual
+support across English, Sinhala, and Tamil (EN / SI / TA).
+
+## System levels
+
+- Foundation — from 175K setup + Rs 25,000/month, 3-week delivery.
+- Growth — from 280K setup + Rs 45,000/month, 4-week delivery.
+- Full Operating System — from 500K setup + Rs 75,000/month, 6-week delivery.
+
+All pricing in Sri Lankan Rupees. Setup is split across three milestones:
+50% on signing, 30% on delivery, 20% at day 30.
+
+## Pricing entry point
+
+Most businesses start with the Operational Audit: a one-time 5,000 LKR, 90-minute
+visit where the team maps every order flow, stock movement, and manual task and
+returns a full operations map with written recommendations and no obligation. The
+5,000 LKR is credited 100% toward a system build if you proceed.
+
+## Pages
+
+- Home: https://neuralshift.lk/
+- About: https://neuralshift.lk/about.html
+- Systems (BizCore): https://neuralshift.lk/systems.html
+- Case Studies: https://neuralshift.lk/case-studies.html
+- Pricing: https://neuralshift.lk/pricing.html
+- FAQ: https://neuralshift.lk/faq.html
+- Contact: https://neuralshift.lk/contact.html
+
+## Contact
+
+- WhatsApp: https://wa.me/94762874856 (usually answered within the hour)
+- Email: hello@neuralshift.lk

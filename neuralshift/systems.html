@@ -74,6 +74,23 @@
   }
   </script>
 
+  <!-- SoftwareApplication structured data (schema.org). Static; provider links to the Organization node by @id. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BizCore",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "provider": {
+      "@id": "https://neuralshift.lk/#organization"
+    },
+    "areaServed": "LK",
+    "availableLanguage": ["en", "si", "ta"],
+    "description": "One operating system for every part of your F&B business. Every module in BizCore is connected — change one thing and the whole system updates. This is not a collection of tools, it is infrastructure."
+  }
+  </script>
+
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -81,11 +98,12 @@
   <link rel="stylesheet" href="css/pages/systems.css">
 </head>
 <body data-page="systems">
+<a href="#main" class="sr-only">Skip to content</a>
 
 <div id="site-wa-fab"></div>
 <div id="site-nav"></div>
 
-<main>
+<main id="main">
   <div class="page-hero">
     <div class="page-hero-glow"></div>
     <div class="page-hero-inner">

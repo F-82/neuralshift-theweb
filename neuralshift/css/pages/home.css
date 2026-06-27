@@ -1168,8 +1168,17 @@ html.dark .how-num-bg {
 }
 
 .ind-emoji {
-  font-size: 24px;
   margin-bottom: 18px;
+  line-height: 0;
+}
+.ind-emoji svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--g);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .ind-name {

@@ -45,6 +45,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://neuralshift.lk/#organization",
     "name": "NeuralShift",
     "url": "https://neuralshift.lk",
     "logo": "https://neuralshift.lk/assets/logo-512.png",
@@ -56,6 +57,115 @@
       "contactType": "customer service"
     },
     "sameAs": []
+  }
+  </script>
+
+  <!-- WebSite structured data (schema.org). Static; publisher links to the Organization node by @id. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://neuralshift.lk/#website",
+    "name": "NeuralShift",
+    "url": "https://neuralshift.lk",
+    "publisher": {
+      "@id": "https://neuralshift.lk/#organization"
+    }
+  }
+  </script>
+
+  <!-- Service / Offer structured data (schema.org). Static; prices, names, and currency match the visible pricing copy exactly. provider links to the Organization node by @id. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Operational Audit",
+        "provider": { "@id": "https://neuralshift.lk/#organization" },
+        "areaServed": "LK",
+        "offers": {
+          "@type": "Offer",
+          "price": "5000",
+          "priceCurrency": "LKR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Foundation System",
+        "provider": { "@id": "https://neuralshift.lk/#organization" },
+        "areaServed": "LK",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "LKR",
+          "priceSpecification": [
+            {
+              "@type": "PriceSpecification",
+              "name": "Setup from",
+              "minPrice": "175000",
+              "priceCurrency": "LKR"
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              "name": "Monthly",
+              "price": "25000",
+              "priceCurrency": "LKR",
+              "billingDuration": "P1M"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Growth System",
+        "provider": { "@id": "https://neuralshift.lk/#organization" },
+        "areaServed": "LK",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "LKR",
+          "priceSpecification": [
+            {
+              "@type": "PriceSpecification",
+              "name": "Setup from",
+              "minPrice": "280000",
+              "priceCurrency": "LKR"
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              "name": "Monthly",
+              "price": "45000",
+              "priceCurrency": "LKR",
+              "billingDuration": "P1M"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Full Operating System",
+        "provider": { "@id": "https://neuralshift.lk/#organization" },
+        "areaServed": "LK",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "LKR",
+          "priceSpecification": [
+            {
+              "@type": "PriceSpecification",
+              "name": "Setup from",
+              "minPrice": "500000",
+              "priceCurrency": "LKR"
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              "name": "Monthly",
+              "price": "75000",
+              "priceCurrency": "LKR",
+              "billingDuration": "P1M"
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
 

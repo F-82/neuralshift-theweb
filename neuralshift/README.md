@@ -36,7 +36,8 @@ neuralshift/
 │   ├── nav-scroll.js       # Toggles `.scrolled` on the nav at 30 px
 │   └── contact.js          # Loaded on contact.html only — temporary "Sent" feedback
 └── assets/
-    └── logo.jpg            # Brand mark used in the nav
+    ├── logo-nav.webp/.png  # Brand mark used in the nav
+    └── logo-512.png        # Square logo for structured data / icons
 ```
 
 ## Previewing locally

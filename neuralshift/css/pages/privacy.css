@@ -1,0 +1,44 @@
+/* Privacy page — plain prose. Builds on the shared tokens and components
+   (page-hero, section, container); no new colors, only token references. */
+
+.legal {
+  max-width: 760px;
+}
+.legal-updated {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--t4);
+  margin-bottom: 56px;
+}
+.legal-block {
+  margin-bottom: 44px;
+}
+.legal-block:last-child {
+  margin-bottom: 0;
+}
+.legal-block h2 {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--t1);
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+.legal-block p {
+  font-size: 15.5px;
+  color: var(--t2);
+  line-height: 1.82;
+  font-weight: 300;
+  margin: 0 0 18px;
+}
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+.legal-block a {
+  color: var(--g);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--g-dim);
+}
+.legal-block a:hover {
+  border-bottom-color: var(--g);
+}

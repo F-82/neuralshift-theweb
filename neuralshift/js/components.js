@@ -101,6 +101,7 @@
       +           '<a href="' + WA_URL + '" target="_blank" rel="noopener">WhatsApp</a>'
       +           '<a href="mailto:hello@neuralshift.lk">hello@neuralshift.lk</a>'
       +           '<a href="contact.html">Book a call</a>'
+      +           '<a href="privacy.html">Privacy Policy</a>'
       +         '</div>'
       +       '</div>'
       +     '</div>'

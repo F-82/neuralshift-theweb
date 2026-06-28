@@ -31,7 +31,10 @@
       if (phone) text += '\nWhatsApp: ' + phone;
 
       var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
-      window.open(url, '_blank', 'noopener');
+      // Navigate the current tab rather than window.open: a popup can be blocked
+      // (in-app browsers, popup blockers) and 'noopener' makes the failure
+      // undetectable, so same-tab navigation is the only reliable open.
+      window.location.href = url;
 
       // Keep the existing success-state feedback as a confirmation.
       if (btn) {
